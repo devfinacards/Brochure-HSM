@@ -13,10 +13,9 @@
 
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
             background-color: #f4f4f4;
             overflow: hidden; /* Prevent scrolling */
         }
@@ -38,13 +37,21 @@
             background-color: #005599;
         }
 
+        /* Center the image container with equal space at the top and bottom */
+        .brochure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 10px; /* Padding around the image */
+        }
+
         /* Hidden image by default */
         .brochure-img {
             display: none;
             max-width: 90%;
-            max-height: 90%; /* Ensures the image scales without overflowing */
+            max-height: 80%;
             height: auto;
-            padding: 10px; /* Adds padding around the image */
             border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -52,7 +59,7 @@
 
         @media (min-width: 768px) {
             .brochure-img {
-                max-width: 60%;
+                max-width: 50%;
                 max-height: 70%;
             }
         }
@@ -63,8 +70,11 @@
     <!-- Button to show the image -->
     <button class="brochure-btn" id="brochureBtn" onclick="showImage()">Brochure HSM</button>
 
-    <!-- Image to be shown after button click -->
-    <img class="brochure-img" id="brochureImage" src="Interface Code QR.png" alt="FinaCards Brochure HSM">
+    <!-- Container to center the image both vertically and horizontally -->
+    <div class="brochure-container">
+        <!-- Image to be shown after button click -->
+        <img class="brochure-img" id="brochureImage" src="Interface Code QR.png" alt="FinaCards Brochure HSM">
+    </div>
 
     <script>
         // Function to show the image and hide the button

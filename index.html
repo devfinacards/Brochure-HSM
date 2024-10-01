@@ -11,16 +11,15 @@
             box-sizing: border-box;
         }
 
-        body {
+        body, html {
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
             background-color: #f4f4f4;
             overflow: hidden; /* Prevent scrolling */
         }
 
-        /* Container for both the button and image */
         .container {
             display: flex;
             flex-direction: column;
@@ -28,9 +27,9 @@
             align-items: center;
             height: 100%;
             width: 100%;
+            padding: 20px;
         }
 
-        /* Button Styling */
         .brochure-btn {
             background-color: #003366;
             color: white;
@@ -47,11 +46,10 @@
             background-color: #005599;
         }
 
-        /* Hidden image by default */
         .brochure-img {
             display: none;
-            max-width: 90%;
-            max-height: 90%; /* Ensures the image scales */
+            max-width: 100%;
+            max-height: 100%;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -60,14 +58,14 @@
 
         @media (min-width: 768px) {
             .brochure-img {
-                max-width: 60%; /* Larger width for bigger screens */
+                max-width: 80%;
                 max-height: 80%;
             }
         }
 
         @media (min-width: 1024px) {
             .brochure-img {
-                max-width: 50%; /* Larger width for wide screens */
+                max-width: 70%;
                 max-height: 80%;
             }
         }
@@ -75,17 +73,12 @@
 </head>
 <body>
 
-    <!-- Container for centering both the button and the image -->
     <div class="container">
-        <!-- Button to show the image -->
         <button class="brochure-btn" id="brochureBtn" onclick="showImage()">Brochure HSM</button>
-
-        <!-- Image to be shown after button click -->
         <img class="brochure-img" id="brochureImage" src="Interface Code QR.png" alt="FinaCards Brochure HSM">
     </div>
 
     <script>
-        // Function to show the image and hide the button
         function showImage() {
             var image = document.getElementById("brochureImage");
             var button = document.getElementById("brochureBtn");

@@ -18,6 +18,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
+            overflow: hidden; /* Prevent scrolling */
         }
 
         /* Button Styling */
@@ -41,10 +42,9 @@
         .brochure-img {
             display: none;
             max-width: 90%;
-            max-height: 80%;
+            max-height: 90%; /* Ensures the image scales without overflowing */
             height: auto;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            padding: 10px; /* Adds padding around the image */
             border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -52,7 +52,7 @@
 
         @media (min-width: 768px) {
             .brochure-img {
-                max-width: 50%;
+                max-width: 60%;
                 max-height: 70%;
             }
         }

@@ -13,16 +13,35 @@
 
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f4f4f4;
-            padding: 20px; /* Adding padding around the body */
         }
 
-        img {
+        /* Button Styling */
+        .brochure-btn {
+            background-color: #003366;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .brochure-btn:hover {
+            background-color: #005599;
+        }
+
+        /* Hidden image by default */
+        .brochure-img {
+            display: none;
             max-width: 90%;
-            max-height: 80%; /* Image takes up 80% of the viewport height */
+            max-height: 80%;
             height: auto;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -32,17 +51,34 @@
         }
 
         @media (min-width: 768px) {
-            img {
+            .brochure-img {
                 max-width: 50%;
-                max-height: 70%; /* Smaller height limit for larger screens */
+                max-height: 70%;
             }
         }
     </style>
 </head>
 <body>
 
-    <img src="Interface Code QR.png" alt="FinaCards Brochure HSM">
+    <!-- Button to show the image -->
+    <button class="brochure-btn" id="brochureBtn" onclick="showImage()">Brochure HSM</button>
+
+    <!-- Image to be shown after button click -->
+    <img class="brochure-img" id="brochureImage" src="/mnt/data/Interface Code QR.png" alt="FinaCards Brochure HSM">
+
+    <script>
+        // Function to show the image and hide the button
+        function showImage() {
+            var image = document.getElementById("brochureImage");
+            var button = document.getElementById("brochureBtn");
+
+            // Show the image
+            image.style.display = "block";
+
+            // Hide the button
+            button.style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
-

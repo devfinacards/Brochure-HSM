@@ -20,6 +20,16 @@
             overflow: hidden; /* Prevent scrolling */
         }
 
+        /* Container for both the button and image */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
         /* Button Styling */
         .brochure-btn {
             background-color: #003366;
@@ -35,16 +45,6 @@
 
         .brochure-btn:hover {
             background-color: #005599;
-        }
-
-        /* Container for the image to center it and give padding */
-        .brochure-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            padding: 20px; /* Padding around the image */
         }
 
         /* Hidden image by default */
@@ -75,11 +75,11 @@
 </head>
 <body>
 
-    <!-- Button to show the image -->
-    <button class="brochure-btn" id="brochureBtn" onclick="showImage()">Brochure HSM</button>
+    <!-- Container for centering both the button and the image -->
+    <div class="container">
+        <!-- Button to show the image -->
+        <button class="brochure-btn" id="brochureBtn" onclick="showImage()">Brochure HSM</button>
 
-    <!-- Container to center the image both vertically and horizontally -->
-    <div class="brochure-container">
         <!-- Image to be shown after button click -->
         <img class="brochure-img" id="brochureImage" src="Interface Code QR.png" alt="FinaCards Brochure HSM">
     </div>
